@@ -71,7 +71,8 @@
             UPLOADED = true
           }
           if (e.key == "c") {
-            ADD_CAMERA = true
+            var view = new Float32Array(r.camera.view)
+            CAMERAS.push(view)
           }
           if (e.key == "v") {
             if (CYCLE_VIEW) {
@@ -101,11 +102,6 @@
             r.camera.rotate([1, 0])
           }
           if (UPLOADED) {CAMERAS = []}
-          if (ADD_CAMERA) {
-            var view = new Float32Array(r.camera.view)
-            CAMERAS.push(view)
-            ADD_CAMERA = false
-          }
         }
         r.render()
       }
