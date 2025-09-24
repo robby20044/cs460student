@@ -85,7 +85,7 @@
                 if (INDEX == CAMERAS.length) {
                   INDEX = 0
                 }
-                window.r.camera.view = CAMERAS[INDEX++]
+                window.r.camera.view = new Float32Array(CAMERAS[INDEX++])
                 if (!CYCLE_VIEW) {
                   clearInterval(x)
                 }
