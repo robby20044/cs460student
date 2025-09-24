@@ -68,7 +68,7 @@
           }
           if (e.key == "l") {
             upload("scene.json")
-            window.UPLOAD = true
+            window.CAMERAS = []
           }
           if (e.key == "c") {
             ADD_CAMERA = true
@@ -100,10 +100,6 @@
           if (CAMERA_ROTATION) {
             r.camera.rotate([1, 0])
           }
-          if (UPLOAD) {
-            window.CAMERAS = []
-          }
-          window.UPLOAD = false
           if (ADD_CAMERA) {
             var view = new Float32Array(r.camera.view)
             CAMERAS.push(view)
