@@ -18,7 +18,7 @@
       ADD_CAMERA = false
       CYCLE_VIEW = false
       INDEX = 0
-      UPLOADED = false
+      CLEAR_CAMS = false
       
 
       window.onload = function() {
@@ -68,9 +68,10 @@
           }
           if (e.key == "l") {
             upload("scene.json")
-            UPLOADED = true
+            CLEAR_CAMS = true
           }
           if (e.key == "c") {
+            CLEAR_CAMS = false
             var view = new Float32Array(window.r.camera.view)
             CAMERAS.push(view)
           }
@@ -84,7 +85,7 @@
                 if (INDEX == CAMERAS.length) {
                   INDEX = 0
                 }
-                r.camera.view = CAMERAS[INDEX++]
+                window.r.camera.view = CAMERAS[INDEX++]
                 if (!CYCLE_VIEW) {
                   clearInterval(x)
                 }
@@ -101,7 +102,7 @@
           if (CAMERA_ROTATION) {
             r.camera.rotate([1, 0])
           }
-          if (UPLOADED) {CAMERAS = []}
+          if (CLEAR_CAMS) {CAMERAS = []}
         }
         r.render()
       }
