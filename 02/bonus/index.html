@@ -82,7 +82,7 @@
                 if (INDEX == CAMERAS.length) {
                   INDEX = 0
                 }
-                r.camera.view = CAMERAS[INDEX++]
+                window.r.camera.view = CAMERAS[INDEX++]
                 if (!CYCLE_VIEW) {
                   console.log("interval cleared")
                   clearInterval(x)
