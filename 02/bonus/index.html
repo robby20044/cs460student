@@ -66,10 +66,10 @@
           if (e.key == "o") {
             download()
           }
-          if (e.key == "l") {
+          if (e.key == "l") {\
+            upload("scene.json")
             CYCLE_VIEW = false
             clearInterval(x)
-            upload("scene.json")
             CLEAR_CAMS = true
           }
           if (e.key == "c") {
