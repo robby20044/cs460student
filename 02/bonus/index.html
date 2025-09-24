@@ -68,6 +68,7 @@
           }
           if (e.key == "l") {
             CYCLE_VIEW = false
+            clearInterval(x)
             upload("scene.json")
             CLEAR_CAMS = true
           }
