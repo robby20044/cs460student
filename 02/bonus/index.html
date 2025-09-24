@@ -67,8 +67,8 @@
             download()
           }
           if (e.key == "l") {
-            upload("scene.json")
             UPLOAD = true
+            upload("scene.json")
           }
           if (e.key == "c") {
             ADD_CAMERA = true
@@ -80,13 +80,11 @@
             else {CYCLE_VIEW = true}
             if (CYCLE_VIEW) {
               var x = setInterval(function() {
-                console.log("view change occurred")
                 if (INDEX == CAMERAS.length) {
                   INDEX = 0
                 }
                 window.r.camera.view = CAMERAS[INDEX++]
                 if (!CYCLE_VIEW) {
-                  console.log("interval cleared")
                   clearInterval(x)
                 }
               }, 1000)
@@ -102,7 +100,10 @@
           if (CAMERA_ROTATION) {
             r.camera.rotate([1, 0])
           }
-          if (UPLOAD) {CAMERAS = []; UPLOAD = false}
+          if (UPLOAD) {
+            CAMERAS = []
+            UPLOAD = false
+          }
           if (ADD_CAMERA) {
             var view = new Float32Array(r.camera.view)
             CAMERAS.push(view)
