@@ -18,7 +18,7 @@
       ADD_CAMERA = false
       CYCLE_VIEW = false
       INDEX = 0
-      UPLOAD = false
+      window.UPLOAD = false
       
 
       window.onload = function() {
@@ -67,8 +67,8 @@
             download()
           }
           if (e.key == "l") {
-            UPLOAD = true
             upload("scene.json")
+            window.UPLOAD = true
           }
           if (e.key == "c") {
             ADD_CAMERA = true
@@ -102,8 +102,8 @@
           }
           if (UPLOAD) {
             CAMERAS = []
-            UPLOAD = false
           }
+          window.UPLOAD = false
           if (ADD_CAMERA) {
             var view = new Float32Array(r.camera.view)
             CAMERAS.push(view)
